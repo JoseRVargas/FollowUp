@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class ConnectionFactory {
     
     private static String servername = "localhost";
-    private static String dbname = "users_db";
+    private static String dbname = "usuarios";
     private static String usuario = "root";
     private static Integer porta = 3306;
     private static String senha = "";

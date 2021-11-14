@@ -26,18 +26,49 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        newprojetcbutton = new javax.swing.JLabel();
+        bluebg = new javax.swing.JLabel();
+        whitebg = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/pfp_border.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 110, 110));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/guide_title.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 210, 30));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/guide_properties.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 980, 50));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/logo.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, 250, 130));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/title.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 170, 50));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/guide_box.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, 320));
+
+        newprojetcbutton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        newprojetcbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/newproject_button.png"))); // NOI18N
+        getContentPane().add(newprojetcbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 700, 70, 80));
+
+        bluebg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/blue_box.png"))); // NOI18N
+        getContentPane().add(bluebg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 790));
+
+        whitebg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgmenu/white_bg.png"))); // NOI18N
+        getContentPane().add(whitebg, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 1030, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +109,14 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bluebg;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel newprojetcbutton;
+    private javax.swing.JLabel whitebg;
     // End of variables declaration//GEN-END:variables
 }

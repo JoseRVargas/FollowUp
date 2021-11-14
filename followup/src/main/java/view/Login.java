@@ -29,7 +29,8 @@ public class Login extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
                
-        
+        //Border label_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.blue);
+        //registerlink.setBorder(label_border);
     }
 
     /**
@@ -49,6 +50,8 @@ public class Login extends javax.swing.JFrame {
         pwdfield = new javax.swing.JPasswordField();
         loginbutton = new javax.swing.JButton();
         loginfieldtitle = new javax.swing.JLabel();
+        registertext = new javax.swing.JLabel();
+        registerlink = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         bgblue = new javax.swing.JLabel();
         bgwhite = new javax.swing.JLabel();
@@ -59,7 +62,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         closebutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/close-button.png"))); // NOI18N
-        closebutton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        closebutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closebutton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closebuttonMouseClicked(evt);
@@ -154,6 +157,26 @@ public class Login extends javax.swing.JFrame {
         loginfieldtitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginfieldtitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/loginfieldtitle.png"))); // NOI18N
         getContentPane().add(loginfieldtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 690, 40));
+
+        registertext.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        registertext.setText("Não possui uma conta?");
+        getContentPane().add(registertext, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 570, -1, -1));
+
+        registerlink.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        registerlink.setForeground(new java.awt.Color(86, 60, 240));
+        registerlink.setText("Clique aqui para se registrar!");
+        registerlink.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerlinkMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                registerlinkMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                registerlinkMouseExited(evt);
+            }
+        });
+        getContentPane().add(registerlink, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 570, -1, -1));
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logodescricao.png"))); // NOI18N
@@ -260,7 +283,15 @@ public class Login extends javax.swing.JFrame {
         
         String query = "SELECT * FROM `users` WHERE `email` = ? AND `password`= ?";
         
-        try {
+        if(emailfield.getText().trim().equals("Endereço de email")){
+            JOptionPane.showMessageDialog(null, "Insira seu endereço de email", "O campo de email está vazio.", 2);
+        }
+        else if(password.trim().equals("testetestete")){
+            JOptionPane.showMessageDialog(null, "Insira sua senha", "O campo senha, está vazio", 2);
+        }
+        else{
+            
+            try {
             st = ConnectionFactory.getConnection().prepareStatement(query);
             
             st.setString(1, email);
@@ -284,9 +315,32 @@ public class Login extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+            
+        }
         
     }//GEN-LAST:event_loginbuttonActionPerformed
+
+    private void registerlinkMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerlinkMouseEntered
+        // TODO add your handling code here:
+        Border label_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.blue);
+        registerlink.setBorder(label_border);
+    }//GEN-LAST:event_registerlinkMouseEntered
+
+    private void registerlinkMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerlinkMouseExited
+        // TODO add your handling code here:
+        Border label_border = BorderFactory.createMatteBorder(0, 0, 0, 0, Color.gray);
+        registerlink.setBorder(label_border);
+    }//GEN-LAST:event_registerlinkMouseExited
+
+    private void registerlinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerlinkMouseClicked
+        // TODO add your handling code here:
+        RegisterForm rf = new RegisterForm();
+        rf.setVisible(true);
+        rf.pack();
+        rf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+        
+    }//GEN-LAST:event_registerlinkMouseClicked
 
     /**
      * @param args the command line arguments
@@ -334,6 +388,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JPasswordField pwdfield;
     private javax.swing.JSeparator pwdseparator;
+    private javax.swing.JLabel registerlink;
+    private javax.swing.JLabel registertext;
     private javax.swing.JCheckBox viewpwd;
     // End of variables declaration//GEN-END:variables
 }
